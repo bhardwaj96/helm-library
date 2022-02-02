@@ -61,7 +61,7 @@ if [[ ${CHANGE_COUNT} -gt 0 ]] ; then
     git commit -m "Bump chartVersion and appVersion to '${TAG}'"
 
     ## rebase
-    git pull --rebase publisher master
+    git pull --rebase publisher main
 fi
 
 ## Install Helm
@@ -79,7 +79,7 @@ fi
 if [[ "${MODE}" == "publish" ]]; then
 
     ## publish changes
-    git push publisher master
+    git push publisher main
 
 fi
 
