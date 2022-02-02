@@ -29,8 +29,8 @@ export HELM_REPO_USERNAME
 export HELM_REPO_PASSWORD
 
 ## set up Git-User
-git config --global user.name "Mittwald Machine"
-git config --global user.email "opensource@mittwald.de"
+git config --global user.name "bhardwaj96"
+git config --global user.email "jyotibhardwaj96@gmail.com"
 
 ## temporary clone git repository
 git clone "https://${GIT_REPOSITORY}" "${TMP_DIR}"
@@ -46,7 +46,7 @@ sed -i "s#^version:.*#version: ${TAG/v/}#g" "${CHART_YAML}"
 git status
 
 ## Add new remote with credentials baked in url
-git remote add publisher "https://mittwald-machine:${GITHUB_TOKEN}@${GIT_REPOSITORY}"
+https://github.com/bhardwaj96/helm-library.git:${GITHUB_TOKEN}@${GIT_REPOSITORY}"
 
 CHANGE_COUNT=$(git status --porcelain | wc -l)
 
