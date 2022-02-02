@@ -10,12 +10,12 @@ fi
 ## avoid noisy shellcheck warnings
 MODE="${1}"
 CHART_YAML="${2}"
-CHART_PATH="$(dirname "${CHART_YAML}")"
+## CHART_PATH="$(dirname "${CHART_YAML}")"
 TAG="${GITHUB_REF##*/}"
 [[ -n "${TAG}" ]] || TAG="0.0.0"
 GITHUB_TOKEN="${GITHUB_TOKEN:-dummy}"
-HELM_REPO_USERNAME="${HELM_REPO_USERNAME:-github}"
-HELM_REPO_PASSWORD="${HELM_REPO_PASSWORD:-dummy}"
+## HELM_REPO_USERNAME="${HELM_REPO_USERNAME:-github}"
+## HELM_REPO_PASSWORD="${HELM_REPO_PASSWORD:-dummy}"
 GENERIC_BIN_DIR="/usr/local/bin"
 
 ## make this script a bit more re-usable
@@ -65,16 +65,16 @@ if [[ ${CHANGE_COUNT} -gt 0 ]] ; then
 fi
 
 ## Install Helm
-if [[ ! -x "$(command -v helm)" ]]; then
-    export HELM_INSTALL_DIR="${GENERIC_BIN_DIR}"
-    HELM_BIN="${GENERIC_BIN_DIR}/helm"
+# if [[ ! -x "$(command -v helm)" ]]; then
+#    export HELM_INSTALL_DIR="${GENERIC_BIN_DIR}"
+  #  HELM_BIN="${GENERIC_BIN_DIR}/helm"
 
-    curl -sS -L https://raw.githubusercontent.com/helm/helm/v3.6.3/scripts/get-helm-3 | bash -s - --version v3.6.3
-    chmod +x "${HELM_BIN}"
-fi
+   # curl -sS -L https://raw.githubusercontent.com/helm/helm/v3.6.3/scripts/get-helm-3 | bash -s - --version v3.6.3
+   # chmod +x "${HELM_BIN}"
+# fi
 
 ## Install Helm push
-helm plugin install https://github.com/chartmuseum/helm-push.git
+# helm plugin install https://github.com/chartmuseum/helm-push.git
 
 if [[ "${MODE}" == "publish" ]]; then
 
@@ -82,8 +82,8 @@ if [[ "${MODE}" == "publish" ]]; then
     git push publisher master
 
     ## upload chart
-    helm repo add mittwald https://helm.mittwald.de --force-update
-    helm cm-push "${CHART_PATH}" mittwald
+   # helm repo add mittwald https://helm.mittwald.de --force-update
+    # helm cm-push "${CHART_PATH}" mittwald
 
 fi
 
