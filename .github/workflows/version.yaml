@@ -1,0 +1,20 @@
+name: Publish Chart
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+      name: "Test and Run"
+      runs-on: ubuntu-latest
+      steps:
+        - name: Run chart version bump
+          uses: mittwald/bump-app-version-action@v1
+          with:
+            mode: 'publish'
+            chartYaml: './shared-lib/Chart.yaml'
+          env:
+            GITHUB_TOKEN: "${{ secrets.githubToken }}"
+            HELM_REPO_PASSWORD: "${{ secrets.HELM_REPO_PASSWORD }}"
