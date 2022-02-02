@@ -25,8 +25,8 @@ GIT_REPOSITORY="github.com/${GITHUB_REPOSITORY}"
 TIMESTAMP="$(date +%s )"
 TMP_DIR="/tmp/${TIMESTAMP}"
 
-export HELM_REPO_USERNAME
-export HELM_REPO_PASSWORD
+# export HELM_REPO_USERNAME
+# export HELM_REPO_PASSWORD
 
 ## set up Git-User
 git config --global user.name "bhardwaj96"
@@ -35,7 +35,7 @@ git config --global user.email "jyotibhardwaj96@gmail.com"
 ## temporary clone git repository
 git clone "https://${GIT_REPOSITORY}" "${TMP_DIR}"
 cd "${TMP_DIR}"
-
+ls -lrth
 ## replace appVersion
 sed -i "s#^appVersion:.*#appVersion: ${TAG}#g" "${CHART_YAML}"
 
