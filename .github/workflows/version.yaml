@@ -12,6 +12,7 @@ jobs:
       name: "Test and Run"
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@main
         - name: Run chart version bump
           uses: ./
           with:
