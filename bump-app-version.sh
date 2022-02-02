@@ -46,7 +46,7 @@ sed -i "s#^version:.*#version: ${TAG/v/}#g" "${CHART_YAML}"
 git status
 
 ## Add new remote with credentials baked in url
-git remote add publisher https://github.com/bhardwaj96/helm-library.git:${GITHUB_TOKEN}@${GIT_REPOSITORY}"
+git remote add publisher "https://github.com/bhardwaj96/helm-library.git:${GITHUB_TOKEN}@${GIT_REPOSITORY}"
 
 CHANGE_COUNT=$(git status --porcelain | wc -l)
 echo = ${CHANGE_COUNT}
