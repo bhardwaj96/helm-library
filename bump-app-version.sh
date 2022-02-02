@@ -49,7 +49,7 @@ git status
 https://github.com/bhardwaj96/helm-library.git:${GITHUB_TOKEN}@${GIT_REPOSITORY}"
 
 CHANGE_COUNT=$(git status --porcelain | wc -l)
-
+echo = ${CHANGE_COUNT}
 if [[ ${CHANGE_COUNT} -gt 0 ]] ; then
     ## add and commit changed file
     git add -A
