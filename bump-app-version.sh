@@ -81,10 +81,6 @@ if [[ "${MODE}" == "publish" ]]; then
     ## publish changes
     git push publisher master
 
-    ## upload chart
-   # helm repo add mittwald https://helm.mittwald.de --force-update
-    # helm cm-push "${CHART_PATH}" mittwald
-
 fi
 
 exit 0
