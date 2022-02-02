@@ -17,7 +17,7 @@ jobs:
           uses: ./
           with:
             mode: 'publish'
-            chartYaml: './chart.yaml'
+            chartYaml: './chart.yml'
           env:
             GITHUB_TOKEN: "${{ secrets.githubToken }}"
             # HELM_REPO_PASSWORD: "${{ secrets.HELM_REPO_PASSWORD }}"
