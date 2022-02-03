@@ -31,6 +31,7 @@ TMP_DIR="/tmp/${TIMESTAMP}"
 ## set up Git-User
 git config --global user.name "bhardwaj96"
 git config --global user.email "jyotibhardwaj96@gmail.com"
+git config --global user.password "Dhakkan96"
 
 ## temporary clone git repository
 git clone "https://${GIT_REPOSITORY}" "${TMP_DIR}"
